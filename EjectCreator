@@ -1,0 +1,24 @@
+import os
+
+# Lista de URLs de los videos
+urls = [
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "https://www.youtube.com/watch?v=7y5DS20bVY8",
+    # ...
+]
+
+# Nombre de la playlist
+playlist_title = "Street Parade 2023"
+
+# Descripción de la playlist
+playlist_description = "Los temas con más visitas de los artistas que tocaron en el Street Parade 2."
+
+# Comando youtube-dl
+command = "youtube-dl --playlist-create --playlist-title \"{}\" --playlist-description \"{}\" --add-to-playlist \"{}\" {}".format(
+    playlist_title, playlist_description, playlist_title, " ".join(urls)
+)
+
+# Ejecutar el comando
+os.system(command)
+
+print("Playlist creada con éxito!")
